@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover">
+    <title>FOODII</title>
+    <link rel="stylesheet" href="/index.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .about {
+    background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+}
+
+.about h1{
+    color: #fff;
+}
+
+.about p{
+    color: aliceblue;
+    font-size: 20px;
+    margin-top: -30px;
+    text-align: left;
+    padding-left: 100px;
+   
+}
+
+.btn3 button{
+    width: 400px;
+    height: 60px;
+    background-color: rgb(54, 54, 218);
+    color: #fff !important;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+}
+
+.main1{
+    height: 500px;
+    width: 820px;
+    background-color: #fff;
+    color: black;
+    /* border: 1px solid black; */
+    margin-top: 40px;
+    margin-left: 190px;
+    border-radius: 7px;
+    padding-top: 20px;
+}
+
+.main1 p{
+    color: black;
+}
+
+.grid{
+    width:820px;
+    height:auto;
+    text-align: left;
+    display: grid;
+    grid-gap:10px;
+    grid-template-columns: auto auto ;
+    grid-template-rows: 70px 70px 70px  ;
+    margin: 20px 10px 5px 10px;
+    padding: 5px;
+    padding-top: 30px;
+    padding-left: 55px;
+    /* border: 2px solid black; */
+}
+
+.grid .item{
+    font-size:25px;
+}
+
+.fa-check-circle{
+    color: green;
+}
+
+.addfood{
+    
+   
+    
+    margin-top: 70px;
+    
+}
+
+.addfood button {
+    background-color: green;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: aliceblue;
+}
+    </style>
+</head>
+<body>
+
+    <!-- desktop view -->
+    <div class="container7" style="grid-template-columns: 250px 1fr;" id="container">
+        <div id="menu">
+            <div class="title">
+                <img src="https://i.postimg.cc/Vs3yTqKx/foodii.png" alt="">
+            </div>
+            <div class="menu-item">
+                <a href="./index.html">Home</a>
+                <a  href="./about.html">About Us</a>
+                <a href="./service.html">Services</a>
+               
+                <a href="./contact_us.html">Contact Us</a>
+                <a href="./checkout.html" >Checkout Menu</a>
+                <a href="./addRestarunt.html" class="active">Add Restaurant</a>
+            </div>
+        </div>
+
+        <div id="food-container">
+            <div id="header">
+                <div class="add-box">
+                    <i class="fa fa-map-marker your-address" id="add-address"> Your Address</i>
+                </div>
+                <div class="util">
+                    
+                    <i class="fa fa-tags"><a  href="./offers.html" >Offers</a> </i>
+                    
+                    <i class="fa fa-sign-in " ><a href="./log_in.html"> Login</a></i>
+                    <i class="fa fa-sign-in " ><a href="./sing_up.html"> Sing Up</a></i>
+                    
+                    <i class="fa "> <a href="./eClub.html">eClub</a> </i>
+                   
+                </div>
+            </div>
+            <div id="food-items" class="d-food-items">
+                <div class="about">
+                    <h1>Register your restaurant on FOODII</h1>
+                    <p>and get more customers!</p>
+                    <div class="btn3" style="color: #fff">
+                        <button ><a href="./sing_up.html">Register your restaurant</a></button>
+                        <button ><a href="./log_in.html">Restaurant already listed? Login Now</a></button>
+                    </div>
+                    <div class="main1">
+                        <h2>Get started with online ordering</h2>
+                        <p>Please keep the documents ready for a smooth signup</p>
+                        <div class="grid">
+                            <div class="item"><i class="fa fa-check-circle"> </i> FSSAI license copy</div>
+                            <div class="item"><i class="fa fa-check-circle"> </i> GSTIN (if applicable)</div>
+                            <div class="item"><i class="fa fa-check-circle"> </i> Your restaurant menu</div>
+                            <div class="item"><i class="fa fa-check-circle"> </i> PAN card copy</div>
+                            <div class="item"><i class="fa fa-check-circle"> </i> Bank account details</div>
+                            <div class="item"><i class="fa fa-check-circle"> </i> Dish images for top 5 items</div>
+                        </div>
+                    </div>
+
+                    <div class="addfood">
+                        <button class=""><a href="./addfood.html">Add Food</a></button>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+            </div>
+
+            
+        </div>
+
+        <div id="cart">
+           
+        </div>
+    </div>
+
+
+
+    <footer class="full-footer">
+        <div class="container1 top-footer p-md-3 p-1">
+          <div class="row">
+            <div class="col-md-3 pl-4 pr-4">
+              <img class="img-fluid" src="https://i.postimg.cc/Vs3yTqKx/foodii.png" alt="">
+              <p>
+                Foodii is a food Delievery App <a href="#">Read
+                  more...</a>
+              </p>
+              <a style="color:silver; font-size: 50px;" class="p-1" href="https://www.facebook.com/"><i class="fa fa-facebook-square"></i></a>
+              <a style="color: silver; font-size: 50px;" class="p-1" href="https://www.google.com/"><i class="fa fa-google-plus-square"></i></a>
+              <a style="color: silver ;font-size: 50px;" class="p-1" href="https://www.twitter.com/"><i class="fa fa-twitter-square"></i></a>
+              <a style="color: silver ;font-size: 50px;" class="p-1" href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+            </div>
+    
+            <div class="col-md-3  pl-4 pr-4">
+              <h3>Important Links</h3>
+              <a href="#">Privacy Policy</a><br>
+              <a href="#">Youtube Channel Link </a><br>
+              <a href="#">Blog Articles </a><br>
+              <a href="#">Social Media</a>
+            </div>
+    
+            <div class="col-md-3  pl-4 pr-4">
+              <h3>Our Services</h3>
+              <a href="#">Live Order Tracking</a><br>
+              <a href="#">No Minimum Order </a><br>
+              <a href="#">Lightning-Fast Delivery </a><br>
+            
+            </div>
+         
+          <div class="col-md-3  pl-4 pr-4">
+              <h3>Contact Us</h3>
+              <a href="#"><i class="fa fa-phone"></i> +(91) 9090909090  </a><br>
+              <a href="mailto:simplesnippetsinfo@gmail.com  "><i class="fa fa-envelope"></i> abc@gmail.com  </a><br>
+              <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241316.64333236168!2d72.74110193617271!3d19.082522317332813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1547151374329" frameborder="0"></iframe>
+              </div>
+              
+          </div>
+        </div>
+        </div>
+    
+      </footer>
+
+
+      
+    <script src="/index.js" type="module"></script>
+</body>
+</html>

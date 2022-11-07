@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover">
+    <title>FOODII</title>
+    <link rel="stylesheet" href="/index.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>       
+     .popup2{
+        position: absolute;
+        top: -150%;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%,-50%) scale(1.60);
+        width: 380px;
+        padding: 20px 30px;
+        background: #fff;
+        box-shadow: 2px 2px 5px 5px rgba(0, 0,0, 0.15);
+        border-radius: 10px;
+        transition: top 0ms ease-in-out 200ms,
+                    opacity 200ms ease-in-out 0ms,
+                    transform 200ms ease-in-out 0ms;
+    }
+    .popup2.active{
+        top: 65%;
+    
+        
+        opacity: 1;
+        transform: translate(-50%,-50%) scale(0.90);
+        transition: top 0ms ease-in-out 0ms,
+                    opacity 200ms ease-in-out 0ms,
+                    transform 200ms ease-in-out 0ms;
+    }
+    .popup2 .close-btn{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 25px;
+        height: 25px;
+        background: #888;
+        color: #eee;
+        text-align: center;
+        line-height: 15px;
+        border-radius: 15px;
+        cursor: pointer;
+    
+    }
+    
+    .popup2 .form h2{
+        text-align: center;
+        color: #222;
+        margin: 10px 0px 20px;
+        font-size: 30px;
+    
+    }
+    .popup2 .form .form-element{
+        margin: 15px 0px;
+    }
+    
+    .popup2 .form .form-element label{
+        font-size: 14px;
+        color: #222;
+    }
+    
+    .popup2 .form .form-element input[type="date"],
+    .popup2 .form .form-element input[type="text"],
+    .popup2 .form .form-element input[type="email"],
+    .popup2 .form .form-element input[type="password"]{
+        margin-top: 5px;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        outline: none;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+    
+    }
+    .popup2 .form .form-element textarea{
+        margin-top: 5px;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        outline: none;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+    }
+    
+    .popup2 .form .form-element input[type="radio"]{
+        display: inline-block;
+    }
+    .popup2 .form .form-element input[type="checkbox"]{
+        margin-right: 5px;
+    
+    }
+    .popup2 .form .form-element button {
+        width: 100%;
+        height: 40px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        /* background: #222; */
+        color: #f5f5f5;
+        border-radius: 10px;
+        cursor: pointer;
+        
+    }
+    .popup2 .form .form-element a{
+        display: block;
+        text-align: right;
+        font-size: 15px;
+        color: #1a79ca;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    
+    .bt1{
+        background-color: green;
+        
+    }
+    
+    .bt2{
+        background-color: rgb(228, 134, 11);
+        
+    }
+    
+    .bt3{
+        background-color: rgb(128, 0, 0);
+        
+    }
+    .bt4{
+        background-color: blue;
+        width: 50%;
+    }
+    
+    .bt5{
+        background-color: aqua;
+        color: #222;
+    }
+    .bt4.bt5{
+        text-align: right;
+    }
+    .imag img{
+        width: 200px;
+        height: 152px;
+        border-radius: 15px;
+        
+    }
+    
+    .imag{
+        text-align: center;
+        display: inline-flex;
+        
+    }
+    
+    .bt1.bt2.bt3.bt4.bt5:hover{
+        background-color: #1a79ca;
+    }
+    .bt1.bt2.bt3.bt4.bt5{
+        margin-left: 20px;
+    }
+    .bt6{
+        display: inline-flex;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 10px;
+        position: sticky;
+        
+    }
+    
+        </style>
+</head>
+<body>
+
+    <!-- desktop view -->
+    <div class="container7" style="grid-template-columns: 250px 1fr;" id="container">
+        <div id="menu">
+            <div class="title">
+                <img src="https://i.postimg.cc/Vs3yTqKx/foodii.png" alt="">
+            </div>
+            <div class="menu-item">
+                <a href="./index.html">Home</a>
+                <a href="./about.html">About Us</a>
+                <a href="./service.html">Services</a>
+                <a class="active" href="./order.html">Your Orders</a>
+               
+                <a href="./contact_us.html">Contact Us</a>
+                <a href="./main.html">Checkout Menu</a>
+                <a href="./addRestarunt.html">Add Restaurant</a>
+            </div>
+        </div>
+
+        <div id="food-container">
+            <div id="header">
+                <div class="add-box">
+                    <i class="fa fa-map-marker your-address" id="add-address"> Your Address</i>
+                </div>
+                <div class="util">
+                    <i class="fa fa-search"><a  href="./search.html" >Search</a> </i>
+                    <i class="fa fa-tags"><a  href="./offers.html" >Offers</a> </i>
+                    <i class="fa fa-cart-plus" id="cart-plus"> My Cart</i>
+                    <i class="fa fa-heart-o " style="background:transparent;" id="cart-plus1"> Wishlist</i>
+                    
+                    
+                    <i class="fa "> <a href="./eClub.html">eClub</a> </i>
+                    <i class="fa fa-user-circle" id="show-login2"> Account</i>
+                </div>
+            </div>
+            <div id="food-items" class="d-food-items">
+                <div class="order">
+                    <div class="font1">
+                        <p>Your order with foodii will be listed here.</p>
+                        
+                        <img class="empty" src="https://i.ibb.co/NVw5SDv/empty-box.png" alt="">
+                        <p>Go ahead and find some awesome restaurants near you...</p>
+                    </div>
+                    <div class="font2">
+                       <h2>No Order</h2>
+                       <p>You haven't placed and order yet.</p> 
+                    </div>
+
+                </div>
+                
+                
+                
+                
+                
+                
+            </div>
+
+            
+        </div>
+
+        
+           
+        </div>
+    </div>
+
+
+    <!-- Account -->
+    <div class="popup2">
+        <div class="close-btn">&times;</div>
+        <div class="form">
+            <h2>Profile </h2>
+            <div class="imag">
+                <img src="https://i.ibb.co/JBC9548/profile.jpg" alt="">
+                <div class="bt">
+                    <div class="form-element">
+                        <button class="bt4">Edit Profile</button>
+                    </div>
+                    <div class="form-element">
+                        <button class="bt5"><a href="./index.html">Log out</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-element">
+                <label for="fname">Full Name</label>
+                <input type="text" name="" id="fname" placeholder="ABSVHDH JSJJASh">
+            </div>
+            <div class="form-element">
+                <label for="dob">Last Name</label>
+                <input type="date" name="" id="dob" >
+            </div>
+            <div class="form-element">
+                <label for="mobile">Mobile No.</label>
+                <input type="text" name="" id="mobile" placeholder="Enter mobile number">
+            </div>
+            <div class="form-element">
+                <label for="gender2" style="padding-right: 20px;">Gender</label>
+                <input type="radio" name="gender" id="gender" value="Male">
+                <label for="gender1" style="padding-right: 20px;">Male</label>
+                <input type="radio" name="gender" id="gender1" value="Female">
+                <label for="gender">Female</label>
+            </div>
+            <div class="form-element">
+                <label for="email">Email</label>
+                <input type="email" name="" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-element">
+                <label for="password">Password</label>
+                <input type="password" name="" id="password" placeholder="Enter password">
+            </div>
+            <div class="form-element">
+                <label for="address">Address</label>
+               <textarea name="" id="address" cols="30" rows="5" placeholder="Enter address "></textarea>
+                
+               <div class="bt6">
+                <div class="form-element">
+                    <button class="bt1">Save</button>
+                </div>
+                <div class="form-element">
+                    <button class="bt2">Reset</button>
+                </div>
+                <div class="form-element">
+                    <button class="bt3">Delete</button>
+                </div>
+               </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="full-footer">
+        <div class="container1 top-footer p-md-3 p-1">
+          <div class="row">
+            <div class="col-md-3 pl-4 pr-4">
+              <img class="img-fluid" src="https://i.ibb.co/z2syjDJ/foodii.png" alt="">
+              <p>
+                Foodii is a food Delievery App <a href="#">Read
+                  more...</a>
+              </p>
+              <a style="color:silver; font-size: 50px;" class="p-1" href="https://www.facebook.com/"><i class="fa fa-facebook-square"></i></a>
+              <a style="color: silver; font-size: 50px;" class="p-1" href="https://www.google.com/"><i class="fa fa-google-plus-square"></i></a>
+              <a style="color: silver ;font-size: 50px;" class="p-1" href="https://www.twitter.com/"><i class="fa fa-twitter-square"></i></a>
+              <a style="color: silver ;font-size: 50px;" class="p-1" href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+            </div>
+    
+            <div class="col-md-3  pl-4 pr-4">
+              <h3>Important Links</h3>
+              <a href="#">Privacy Policy</a><br>
+              <a href="#">Youtube Channel Link </a><br>
+              <a href="#">Blog Articles </a><br>
+              <a href="#">Social Media</a>
+            </div>
+    
+            <div class="col-md-3  pl-4 pr-4">
+              <h3>Our Services</h3>
+              <a href="#">Live Order Tracking</a><br>
+              <a href="#">No Minimum Order </a><br>
+              <a href="#">Lightning-Fast Delivery </a><br>
+            
+            </div>
+         
+          <div class="col-md-3  pl-4 pr-4">
+              <h3>Contact Us</h3>
+              <a href="#"><i class="fa fa-phone"></i> +(91) 9090909090  </a><br>
+              <a href="mailto:simplesnippetsinfo@gmail.com  "><i class="fa fa-envelope"></i> abc@gmail.com  </a><br>
+              <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241316.64333236168!2d72.74110193617271!3d19.082522317332813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1547151374329" frameborder="0"></iframe>
+              </div>
+              
+          </div>
+        </div>
+        </div>
+    
+      </footer>
+
+
+      <script>
+        document.querySelector("#show-login2").addEventListener("click",function(){
+          document.querySelector(".popup2").classList.add("active")
+          });
+          
+          document.querySelector(".popup2 .close-btn").addEventListener("click",function(){
+          document.querySelector(".popup2").classList.remove("active")
+          });
+
+
+
+  </script>
+    <script src="/index.js" type="module"></script>
+   
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sing Up</title>
+	<style>
+		body{
+			background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+		}
+		.loginclik{
+    		margin-left: 30px;
+		}
+
+		.loginclik span{
+			color: black;
+			font-size: 20px;
+
+		}
+		.loginclik a{
+    		text-decoration: none;
+    		color: green;
+    		font-size: 15px;
+		}
+		.shadow{
+			box-shadow: 2px 2px 15px rgb(164, 226, 19);
+		}
+		.box{
+			border-radius: 10px;
+			padding-top: 20px;
+		}
+	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	
+
+
+	<div class="container "><br>
+		<h1 class="text-white text-center font-weight-bold bg-primary rounded" style="font-size: 55px;"> Sing up </h1>
+		<div class="col-lg-6 m-auto d-block box bg-info ">
+			
+			<form action="#" onclick=" return validation()" class="bg-light rounded p-5 shadow" >
+				
+				<div class="form-group">
+					<label for="user" for="user" class="font-weight-bold"> Username: </label>
+					<input type="text" name="user" class="form-control" id="user" >
+					<span id="username" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-group">
+					<label for="pass" class="font-weight-bold"> Password: </label>
+					<input type="text" name="pass" class="form-control" id="pass" >
+					<span id="passwords" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-group">
+					<label for="conpass" class="font-weight-bold"> Confirm Password: </label>
+					<input type="text" name="conpass" class="form-control" id="conpass" >
+					<span id="confrmpass" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-group">
+					<label for="mobileNumber" class="font-weight-bold"> Mobile Number: </label>
+					<input type="text" name="mobile" class="form-control" id="mobileNumber" >
+					<span id="mobileno" class="text-danger font-weight-bold"> </span>
+				</div>
+				
+				<div class="form-group">
+					<label for="emails" class="font-weight-bold"> Email: </label>
+					<input type="text" name="email" class="form-control" id="emails" >
+					<span id="emailids" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<input type="button" name="submit" value="Registere"  class="btn btn-success " onclick="myFunction()"	>
+
+
+
+			</form><br>
+			<div class="loginclik">
+				<span>If you already register ?</span><a href="./log_in.html" >Clik here<b> to go login</b></a>
+			</div>
+<br>
+
+
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+		
+
+		function validation(){
+
+			var user = document.getElementById('user').value;
+			var pass = document.getElementById('pass').value;
+			var confirmpass = document.getElementById('conpass').value;
+			var mobileNumber = document.getElementById('mobileNumber').value;
+			var emails = document.getElementById('emails').value;
+
+
+
+
+
+			if(user == ""){
+				document.getElementById('username').innerHTML =" ** Please fill the username field";
+				return false;
+			}
+			if((user.length <= 2) || (user.length > 20)) {
+				document.getElementById('username').innerHTML =" ** Username lenght must be between 2 and 20";
+				return false;	
+			}
+			if(!isNaN(user)){
+				document.getElementById('username').innerHTML =" ** only characters are allowed";
+				return false;
+			}
+
+
+
+
+
+
+
+			if(pass == ""){
+				document.getElementById('passwords').innerHTML =" ** Please fill the password field";
+				return false;
+			}
+			if((pass.length <= 5) || (pass.length > 20)) {
+				document.getElementById('passwords').innerHTML =" ** Passwords lenght must be between  5 and 20";
+				return false;	
+			}
+
+
+			if(pass!=confirmpass){
+				document.getElementById('confrmpass').innerHTML =" ** Password does not match the confirm password";
+				return false;
+			}
+
+
+
+			if(confirmpass == ""){
+				document.getElementById('confrmpass').innerHTML =" ** Please fill the confirmpassword field";
+				return false;
+			}
+
+
+
+
+			if(mobileNumber == ""){
+				document.getElementById('mobileno').innerHTML =" ** Please fill the mobile NUmber field";
+				return false;
+			}
+			if(isNaN(mobileNumber)){
+				document.getElementById('mobileno').innerHTML =" ** user must write digits only not characters";
+				return false;
+			}
+			if(mobileNumber.length!=10){
+				document.getElementById('mobileno').innerHTML =" ** Mobile Number must be 10 digits only";
+				return false;
+			}
+
+
+
+			if(emails == ""){
+				document.getElementById('emailids').innerHTML =" ** Please fill the email id field";
+				return false;
+			}
+			if(emails.indexOf('@') <= 0 ){
+				document.getElementById('emailids').innerHTML =" ** @ Invalid Position";
+				return false;
+			}
+
+			if((emails.charAt(emails.length-4)!='.') && (emails.charAt(emails.length-3)!='.')){
+				document.getElementById('emailids').innerHTML =" ** . Invalid Position";
+				return false;
+			}
+		}
+
+
+
+		function myFunction(){
+           
+            
+                alert('Register  Succsesfuly')
+                window.location.href=('log_in.html');
+                
+				jsonData()
+        }
+
+		var count=0;
+		function jsonData(){
+			
+			count++
+			var id=count;
+			var name=document.getElementById('user').value;
+			var email=document.getElementById('emails').value;
+			var password=  document.getElementById('pass').value;
+			var mobileno = document.getElementById('mobileNumber').value;
+
+			jsonObject={
+				"Id":"",
+				"Name":"",
+				"Email":"",
+				"Password":"",
+				"MobileNo":""
+		
+			}
+
+			jsonObject.Id=id;
+			jsonObject.Name=name;
+			jsonObject.Email=email;
+			jsonObject.Password=password;
+			jsonObject.MobileNo=mobileno;
+
+			var singupData=JSON.stringify(jsonObject);
+
+			console.log(singupData);
+
+
+			
+		}
+
+		
+	</script>
+
+</body>
+</html>

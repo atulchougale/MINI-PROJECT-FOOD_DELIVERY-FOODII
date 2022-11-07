@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<style>
+		body{
+			background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+		}
+        .registerlink{
+            margin-left: 100px;
+        }
+
+        .registerlink span{
+            color: #000000;
+            font-size: 25px;
+
+        }
+
+        .registerlink a{
+            text-decoration: none;
+            color: green;
+            font-size: 20px
+        }
+        .shadow{
+			box-shadow: 2px 2px 15px rgb(164, 226, 19);
+		}
+		.box{
+			border-radius: 10px;
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	
+
+
+	<div class="container "><br>
+		<h1 class="text-white text-center font-weight-bold bg-primary rounded" style="font-size: 55px;"> Login </h1>
+		<div class="col-lg-6 m-auto d-block bg-info box ">
+			
+			<form action="#" onclick=" return validation()" class="bg-light rounded p-5 shadow ">
+				
+				
+				<div class="form-group">
+					<label class="font-weight-bold"> Email: </label>
+					<input type="text" name="email" class="form-control" id="emails" autocomplete="off">
+					<span id="emailids" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-group">
+					<label class="font-weight-bold"> Password: </label>
+					<input type="password" name="pass" class="form-control" id="pass" autocomplete="off">
+                    <input type="button" value="Show password" class="btn btn-warning mt-2 " onclick="showPassword()">
+					<span id="passwords" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				
+				
+
+				<input type="button" name="submit" value="Login" class="btn btn-success " onclick="myFunction()">
+                
+				
+
+
+			</form><br>
+			<div class="form-group">
+				<a href="#" class="text-right" style="color:orangered ; font-size:20px">Forgot password?</a>
+	
+			</div>
+			<div class="registerlink">
+				<span>Not Registered ?</span><a href="./sing_up.html" id="singup">Click here</a>
+			</div>
+
+
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+		
+
+		function validation(){
+
+			
+			var pass = document.getElementById('pass').value;
+			var emails = document.getElementById('emails').value;
+			
+			
+
+
+
+
+
+			if(emails == ""){
+				document.getElementById('emailids').innerHTML =" ** Please fill the email id field";
+				return false;
+			}
+			if(emails.indexOf('@') <= 0 ){
+				document.getElementById('emailids').innerHTML =" ** @ Invalid Position";
+				return false;
+			}
+
+			if((emails.charAt(emails.length-4)!='.') && (emails.charAt(emails.length-3)!='.')){
+				document.getElementById('emailids').innerHTML =" ** . Invalid Position";
+				return false;
+			}
+
+
+			if(pass == ""){
+				document.getElementById('passwords').innerHTML =" ** Please fill the password field";
+				return false;
+			}
+			if((pass.length <= 5) || (pass.length > 20)) {
+				document.getElementById('passwords').innerHTML =" ** Passwords lenght must be between  5 and 20";
+				return false;	
+			}
+
+
+
+
+			
+		}
+
+        function myFunction(){
+            var pass1 = document.getElementById('pass').value;
+			var emails1 = document.getElementById('emails').value;
+            if(emails1=="guvi@gmail.com" && pass1=="12345678")
+            {
+                alert('Login  Succsesfuly')
+                window.location.href=('main.html');
+                
+            }
+            else{
+                alert("Invalid Email and Password");
+                return;
+            }
+        }
+
+       function showPassword(){
+        var pass2 = document.getElementById('pass');
+        if(pass2.type==="password"){
+            pass2.type="text";
+        }else{
+            pass2.type="password";
+        }
+       }
+	</script>
+
+</body>
+</html>

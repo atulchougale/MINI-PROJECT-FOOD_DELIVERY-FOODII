@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover">
+    <title>FOODII</title>
+    <style>
+        .popup2{
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%,-50%) scale(1.60);
+    width: 380px;
+    padding: 20px 30px;
+    background: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0,0, 0.15);
+    border-radius: 10px;
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 200ms ease-in-out 0ms;
+}
+.popup2.active{
+    top: 65%;
+
+    
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(0.90);
+    transition: top 0ms ease-in-out 0ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 200ms ease-in-out 0ms;
+}
+.popup2 .close-btn{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    background: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+
+}
+
+.popup2 .form h2{
+    text-align: center;
+    color: #222;
+    margin: 10px 0px 20px;
+    font-size: 30px;
+
+}
+.popup2 .form .form-element{
+    margin: 15px 0px;
+}
+
+.popup2 .form .form-element label{
+    font-size: 14px;
+    color: #222;
+}
+
+.popup2 .form .form-element input[type="date"],
+.popup2 .form .form-element input[type="text"],
+.popup2 .form .form-element input[type="email"],
+.popup2 .form .form-element input[type="password"]{
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+
+}
+.popup2 .form .form-element textarea{
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.popup2 .form .form-element input[type="radio"]{
+    display: inline-block;
+}
+.popup2 .form .form-element input[type="checkbox"]{
+    margin-right: 5px;
+
+}
+.popup2 .form .form-element button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    /* background: #222; */
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+.popup2 .form .form-element a{
+    display: block;
+    text-align: right;
+    font-size: 15px;
+    color: #1a79ca;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.bt1{
+    background-color: green;
+    
+}
+
+.bt2{
+    background-color: rgb(228, 134, 11);
+    
+}
+
+.bt3{
+    background-color: rgb(128, 0, 0);
+    
+}
+.bt4{
+    background-color: blue;
+    width: 50%;
+}
+
+.bt5{
+    background-color: aqua;
+    color: #222;
+}
+.bt4.bt5{
+    text-align: right;
+}
+.imag img{
+    width: 200px;
+    height: 152px;
+    border-radius: 15px;
+    
+}
+
+.imag{
+    text-align: center;
+    display: inline-flex;
+    
+}
+
+.bt1.bt2.bt3.bt4.bt5:hover{
+    background-color: #1a79ca;
+}
+.bt1.bt2.bt3.bt4.bt5{
+    margin-left: 20px;
+}
+.bt6{
+    display: inline-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    position: sticky;
+    
+}
+
+    </style>
+    <link rel="stylesheet" href="/index.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <!-- desktop view -->
+    <div class="container7" id="container">
+        <div id="menu">
+            <div class="title">
+                <img src="https://i.postimg.cc/Vs3yTqKx/foodii.png" alt="">
+            </div>
+            <div class="menu-item">
+                <a href="./index.html">Home</a>
+                <a href="./about.html">About us</a>
+                <a href="./service.html">Services</a>
+                <a href="./order.html">Your Orders</a>
+                
+                <a href="./contact_us.html">Contact Us</a>
+                <a href="./checkout.html" class="active">Checkout Menu</a>
+                <a href="./addRestarunt.html">Add Restaurant</a>
+            </div>
+        </div>
+
+        <div id="food-container">
+            <div id="header">
+                <div class="add-box">
+                    <i class="fa fa-map-marker your-address" id="add-address"> Your Address</i>
+                </div>
+                <div class="util">
+                    <i class="fa fa-search"><a  href="./search.html" >Search</a> </i>
+                    <i class="fa fa-tags"><a  href="./offers.html" >Offers</a> </i>
+                    <i class="fa fa-cart-plus" id="cart-plus"> My Cart</i>
+                    <i class="fa fa-heart-o " style="background:transparent;" id="wishList"> Wishlist</i>
+                    
+                    
+                    <i class="fa "> <a href="./eClub.html">eClub</a> </i>
+                    <i class="fa fa-user-circle" id="show-login2"> Account</i>
+                </div>   
+            </div>
+           
+            <div id="food-items" class="d-food-items">
+                <div id="biryani" class="d-biryani">
+                    <p id="category-name">Biryani</p>    
+                </div>
+
+                <div id="chicken" class="d-chicken">
+                    <p id="category-name">Chicken Delicious</p>    
+                </div>
+
+                <div id="paneer" class="d-paneer">
+                    <p id="category-name">Paneer Mania</p>
+                </div>
+
+                <div id="vegetable" class="d-vegetable">
+                    <p id="category-name">Pure Veg Dishes</p> 
+                </div>
+
+                <div id="chinese" class="d-chinese">
+                    <p id="category-name">Chinese Corner</p> 
+                </div>
+
+                <div id="south-indian" class="d-south-indian">
+                    <p id="category-name">South Indian</p>
+                </div>
+            </div>
+
+            <div id="cart-page" class="cart-toggle">
+                <p id="cart-title">Cart Items</p>
+                <p id="m-total-amount">Total Amout : 100</p>
+                <table>
+                    <thead>
+                        <td>Item</td>
+                        <td>Name</td>
+                        <td>Quantity</td>
+                        <td>Price</td>
+                    </thead>
+                    <tbody id="table-body">
+                        
+                    </tbody>
+                </table>
+               
+            </div>
+            <div id="wishlist-page" class="heart-toggle">
+                <p id="cart-title1">Wishlist Items</p>
+                <p id="m-total-amount1"></p>
+                <table>
+                    <thead>
+                        <td>Item</td>
+                        <td>Name</td>
+                        <td>Delete</td>
+                        <td>Price</td>
+                    </thead>
+                    <tbody id="table-body1">
+                        
+                    </tbody>
+                </table>
+               
+            </div>
+            <div id="checkout-page" class="checkout-toggle">
+                <p id="cart-title2">Checkout</p>
+                <p id="m-total-amount1"></p>
+                <table>
+                    <thead>
+                        <td>Item</td>
+                        <td>Name</td>
+                        <td>Quantity</td>
+                        <td>Price</td>
+                    </thead>
+                    <tbody id="table-body2">
+                      
+                        
+                    </tbody>
+                </table>
+            
+                <div class="address">
+                    <p style="color:#1a79ca ; font-weight:bold;font-size:30px">Delivery Address :</p>
+                    <form action="" >
+                    
+                        <label for="fullname"></label>
+                        <input type="text" name="" id="fullname" placeholder="Full Name(Reqired)*" style="width: 500px;height:40px; border-radius:7px;margin: 10px;" required>
+                        <br>
+                        <label for="phone"></label>
+                        <input type="text" name="" id="phone" placeholder="Phone Number(Reqired)*" style="width: 300px;height:40px; border-radius:7px;margin: 10px;" required>
+                        <br>
+                        <label for="pincode"></label>
+                        <input type="number" name="" id="pincode" placeholder="Pincode(Reqired)*" style="width: 200px;height:40px; border-radius:7px;margin: 10px;" required>
+                        <br>
+                        <label for="state"></label>
+                        <input type="text" name="" id="state" placeholder="State(Reqired)*" style="width: 100px;height:40px; border-radius:7px;margin: 10px;" required>
+                       
+                        <label for="city"></label>
+                        <input type="text" name="" id="city" placeholder="City(Reqired)*" style="width: 100px;height:40px; border-radius:7px;margin-left: 50px;margin: 10px;" required>
+                        <br>
+                        <label for="houseno"></label>
+                        <input type="text" name="" id="houseno" placeholder="House No.,Building Name(Reqired)*" style="width: 500px;height:40px; border-radius:7px;margin: 10px;" required>
+                        <br>
+                        <label for="area"></label>
+                        <input type="text" name="" id="area" placeholder="Road Name,Area,Colony(Reqired)*" style="width: 500px;height:40px; border-radius:7px;margin: 10px;" required>
+                        <button type="submit" class="cart-btn" style="margin-left: 500px;">Payment</button>
+                    </form>
+                </div>    
+            </div>
+              
+        </div>
+
+        <div id="cart">
+            <div class="taste-header">
+                <div class="user">
+                </div>
+            </div>
+            <div id="category-list">
+                <p class="item-menu">Go For Eat</p>
+                <div class="border"></div>                
+            </div>
+            <div id="checkout1" class="heart-toggle">
+                <p id="total-item1">Total Item : 5</p>
+                <p id="total-price1"></p>
+                <p id="delievery">Delievery charge : 50 RS/- only</p>
+                
+            </div>
+            <div id="checkout" class="cart-toggle">
+                <p id="total-item">Total Item : 5</p>
+                <p id="total-price"></p>
+                <p id="delievery">Delievery charge : 50 RS/- only</p>
+                <button class="cart-btn" id="check_btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Account -->
+    <div class="popup2">
+        <div class="close-btn">&times;</div>
+        <div class="form">
+            <h2>Profile </h2>
+            <div class="imag">
+                <img src="https://i.ibb.co/JBC9548/profile.jpg" alt="">
+                <div class="bt">
+                    <div class="form-element">
+                        <button class="bt4">Edit Profile</button>
+                    </div>
+                    <div class="form-element">
+                        <button class="bt5"><a href="./index.html">Log out</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-element">
+                <label for="fname">Full Name</label>
+                <input type="text" name="" id="fname" placeholder="ABSVHDH JSJJASh">
+            </div>
+            <div class="form-element">
+                <label for="dob">Last Name</label>
+                <input type="date" name="" id="dob" >
+            </div>
+            <div class="form-element">
+                <label for="mobile">Mobile No.</label>
+                <input type="text" name="" id="mobile" placeholder="Enter mobile number">
+            </div>
+            <div class="form-element">
+                <label for="gender2" style="padding-right: 20px;">Gender</label>
+                <input type="radio" name="gender" id="gender" value="Male">
+                <label for="gender1" style="padding-right: 20px;">Male</label>
+                <input type="radio" name="gender" id="gender1" value="Female">
+                <label for="gender">Female</label>
+            </div>
+            <div class="form-element">
+                <label for="email">Email</label>
+                <input type="email" name="" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-element">
+                <label for="password">Password</label>
+                <input type="password" name="" id="password" placeholder="Enter password">
+            </div>
+            <div class="form-element">
+                <label for="address">Address</label>
+               <textarea name="" id="address" cols="30" rows="5" placeholder="Enter address "></textarea>
+                
+               <div class="bt6">
+                <div class="form-element">
+                    <button class="bt1">Save</button>
+                </div>
+                <div class="form-element">
+                    <button class="bt2">Reset</button>
+                </div>
+                <div class="form-element">
+                    <button class="bt3">Delete</button>
+                </div>
+               </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+
+    <footer class="full-footer">
+        <div class="container1 top-footer p-md-3 p-1">
+          <div class="row">
+            <div class="col-md-3 pl-4 pr-4">
+              <img class="img-fluid" src="https://i.ibb.co/z2syjDJ/foodii.png" alt="">
+              <p>
+                Foodii is a food Delievery App <a href="#">Read
+                  more...</a>
+              </p>
+              <a style="color:silver; font-size: 50px;" class="p-1" href="https://www.facebook.com/"><i class="fa fa-facebook-square"></i></a>
+              <a style="color: silver; font-size: 50px;" class="p-1" href="https://www.google.com/"><i class="fa fa-google-plus-square"></i></a>
+              <a style="color: silver ;font-size: 50px;" class="p-1" href="https://www.twitter.com/"><i class="fa fa-twitter-square"></i></a>
+              <a style="color: silver ;font-size: 50px;" class="p-1" href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+            </div>
+    
+            <div class="col-md-3  pl-4 pr-4">
+              <h3>Important Links</h3>
+              <a href="#">Privacy Policy</a><br>
+              <a href="#">Youtube Channel Link </a><br>
+              <a href="#">Blog Articles </a><br>
+              <a href="#">Social Media</a>
+            </div>
+    
+            <div class="col-md-3  pl-4 pr-4">
+              <h3>Our Services</h3>
+              <a href="#">Live Order Tracking</a><br>
+              <a href="#">No Minimum Order </a><br>
+              <a href="#">Lightning-Fast Delivery </a><br>
+            
+            </div>
+         
+          <div class="col-md-3  pl-4 pr-4">
+              <h3>Contact Us</h3>
+              <a href="#"><i class="fa fa-phone"></i> +(91) 9090909090  </a><br>
+              <a href="mailto:simplesnippetsinfo@gmail.com  "><i class="fa fa-envelope"></i> abc@gmail.com  </a><br>
+              <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241316.64333236168!2d72.74110193617271!3d19.082522317332813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1547151374329" frameborder="0"></iframe>
+              </div>
+              
+          </div>
+        </div>
+        </div>
+    
+      </footer>
+
+         <!-- mobile view -->
+    <div id="mobile-view" class="mobile-view">
+        <div class="mobile-top">
+            <div class="logo-box">
+                <img src="https://i.ibb.co/z2syjDJ/foodii.png" alt="" id="logo">
+                <i class="fa fa-map-marker your-address" id="m-add-address"> Your Address</i>
+            </div>
+            <div class="top-menu">
+                <i class="fa fa-search"></i>
+                <i class="fa fa-tag"></i>
+                <i class="fa fa-heart-o"></i>
+                <i class="fa fa-cart-plus" id="m-cart-plus"> 0</i>
+            </div>
+        </div>
+        
+        <div class="item-container">
+            <div class="category-header" id="category-header">  
+            </div>
+
+            <div id="food-items" class="food-items">
+                <div id="biryani" class="m-biryani">
+                    <p id="category-name">Biryani</p>    
+                </div>
+                <div id="chicken" class="m-chicken">
+                    <p id="category-name">Chicken Delicious</p>    
+                </div>
+                <div id="paneer" class="m-paneer">
+                    <p id="category-name">Paneer Mania</p>
+                </div>
+                <div id="vegetable" class="m-vegetable">
+                    <p id="category-name">Pure Veg Dishes</p> 
+                </div>
+                <div id="chinese" class="m-chinese">
+                    <p id="category-name">Chinese Corner</p> 
+                </div>
+                <div id="south-indian" class="m-south-indian">
+                    <p id="category-name">South Indian</p>
+                </div>
+            </div>            
+        </div>
+
+        <div class="mobile-footer">
+            <p>Home</p>
+            <p>Cart</p>
+            <p>offers</p>
+            <p>orders</p>
+        </div>
+    </div>
+    <script>
+          document.querySelector("#show-login2").addEventListener("click",function(){
+            document.querySelector(".popup2").classList.add("active")
+            });
+            
+            document.querySelector(".popup2 .close-btn").addEventListener("click",function(){
+            document.querySelector(".popup2").classList.remove("active")
+            });
+
+
+
+    </script>
+    <script src="/index.js" type="module"></script>
+    <!-- <script src="/index2.js" type="module"></script> -->
+</body>
+</html>
